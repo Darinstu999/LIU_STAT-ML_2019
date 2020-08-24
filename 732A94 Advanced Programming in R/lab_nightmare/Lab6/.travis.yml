@@ -1,0 +1,5 @@
+language: r
+cache: packages
+before_install: cd fastcomplex
+
+warning_are_errors: false

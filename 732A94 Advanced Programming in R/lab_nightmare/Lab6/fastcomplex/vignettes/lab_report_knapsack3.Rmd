@@ -1,0 +1,101 @@
+---
+title: "fastcomplex package"
+description: "Description for the fastcomplex-package"
+output: rmarkdown::html_vignette
+vignette: >
+ %\VignetteIndexEntry{fastcomplex package}
+ %\VignetteEngine{knitr::rmarkdown}
+ %\VignetteEncoding{UTF-8}
+---
+  
+## Introduction
+  This is an introduction to the `fastcomplex` package. The package contains functions that can be used to solve
+the knapsack problem. A brief introduction to all three functions will be provided in this vignette.
+
+### How to use the package 
+
+The package can be downloaded from github using `install_github` function from the `devtools` package.
+Do not forget to set the `build_vignettes` statement in `install_github` to TRUE. That way, you force R to upload the vignette for the package.
+
+```{r,eval=FALSE,results='hide',message=FALSE}
+install_github("https://github.com/ahmetakdeve/Lab6_group17",
+               #subdir = "fastcomplex",build_vignettes = TRUE)
+```
+
+The sampled data which will be used to present the function outputs:
+
+```{r,eval=TRUE,results='hide'}
+library(fastcomplex)
+
+suppressWarnings(RNGversion("3.5.9"))
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(
+  w=sample(1:4000, size = n, replace = TRUE),
+  v=runif(n = n, 0, 10000))
+knapsack_objects16 <- data.frame(
+  w=sample(1:4000, size = 16, replace = TRUE),
+  v=runif(n = n, 0, 10000))
+knapsack_objects500 <- data.frame(
+  w=sample(1:4000, size = 500, replace = TRUE),
+  v=runif(n = n, 0, 10000))
+knapsack_objects1000000 <- data.frame(
+  w=sample(1:4000, size = 1000000, replace = TRUE),
+  v=runif(n = n, 0, 10000)
+)
+
+```
+
+### Profiling and optimizing code
+
+Since the weight of an item should not exceed the knapsack size, we hade added a row to all algorithms that clear weights greater than the knapsack size before the algorithm runs through all rows. In this way we remove all rows that do not affect the result and the algorithms have less data to get through. This can matter if large amounts of data are used where there are many weights that would be larger than the knapsack size.
+
+
+
+### Brute force search 
+
+This algorithm is going through all 2^n combinations and returns the highest possible value for the knapsack. This approach is of complexity 0(2^n). Example of how running the function:
+  
+```{r,eval=TRUE}
+brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500,par=FALSE)
+```
+
+Time to run the algorithm for n=16 objects:
+  
+```{r,eval=TRUE}
+system.time(brute_force_knapsack(x = knapsack_objects16[1:8,], W = 3500))
+```
+
+### Knapsack dynamic
+
+Since the weights are discrete values, the knapsack problem can be solved by iterating over all posible values of `w`. This approach is of complexity `O(Wn)`. Example of how running the function:
+
+```{r,eval=TRUE}
+knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
+```
+
+Time to run the algorithm for n=500 objects:
+  
+```{r,eval=TRUE}
+system.time(knapsack_dynamic(x = knapsack_objects500[1:8,], W = 3500))
+```
+
+
+### Greedy heuristic
+
+An approach of computational complexity `O(nlogn)`. Example of how running the function:
+  
+```{r,eval=TRUE}
+greedy_knapsack(x = knapsack_objects[1:800,], W = 3500)
+```
+
+Time to run the algorithm for n=1000000 objects:
+
+```{r,eval=TRUE}
+system.time(greedy_knapsack(x = knapsack_objects1000000[1:8,], W = 3500))
+```
+
+
+### (*) Parallelize brute force search
+
+We implemented an argument "parallel" to the brute force function which is FALSE by default. If the argument is TRUE then the function parallelize over the detected the cores. Its doubles time if this argument runs i par way.
