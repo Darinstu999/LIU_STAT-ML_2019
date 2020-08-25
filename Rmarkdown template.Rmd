@@ -1,0 +1,68 @@
+---
+title: "123"
+author: "name()"
+date: "1946/02/14"
+output: pdf_document
+---
+
+<!-- Here you can set global options, which control all blocks below. -->
+```{r glb_options, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.width = 7,
+                      fig.height = 4,
+                      fig.align = 'center')
+```
+
+<!-- Also, you can set option for specific usage. -->
+### Load packages
+```{r, echo=TRUE}
+library()
+library()
+library()
+```
+
+## Assignment 1. 
+### 1. 
+
+```{r}
+# Import dataset
+
+```
+
+### 2.
+
+```{r}
+
+```
+
+
+### 3.
+
+```{r}
+
+```
+
+## Assignment 2
+### 1. 
+
+```{r}
+# Import dataset
+
+```
+
+## Assignment 3
+### 1. 
+
+```{r}
+# Import dataset
+
+```
+
+\newpage
+
+<!-- Use the following line to add all block automatically. -->
+## Appendix
+```{r, ref.label=knitr::all_labels(),echo=TRUE,eval=FALSE}
+```
