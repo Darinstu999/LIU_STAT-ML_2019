@@ -27,8 +27,8 @@ Link: https://liu.se/en/education/program/f7msl
 
 <!-- CONTACT -->
 ## Contact
-* Email1 - [@qq.com](843030587@qq.com)
-* Email2 - [@gmail.com](darinstu999@gmail.com)
+* Email1 - [843030587@qq.com]
+* Email2 - [darinstu999@gmail.com]
 
 <!-- LICENSE -->
 ## License
