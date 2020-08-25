@@ -28,7 +28,7 @@ Link: https://liu.se/en/education/program/f7msl
 
 <!-- USAGE -->
 ## Usage
-As you can see in the catalog, each file includes course handouts, labs and lab_nightmare. And they have been compressed for download.
+As you can see in the catalog, each file includes course lectures, labs and lab_nightmare. And they have been compressed for download.
 
 I added .DS_Store to the .gitignore file, the purpose is to delete the desktop settings file that comes with the mac, you can just ignore it.
 
