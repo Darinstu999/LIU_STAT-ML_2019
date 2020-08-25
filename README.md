@@ -9,7 +9,17 @@
 
 <!-- ABOUT THE PROJECT -->
 # LIU_STAT-ML_2019
-Course docs and labs
+Linkoping University
+
+Program: Statistics & Machine Learning
+
+Courses docs and labs
+
+2019 Version
+
+Copyright: LIU_FACULTY OF ARTS AND SCIENCES
+
+Link: https://liu.se/en/education/program/f7msl
 
 ### Built With
 * R (version 3.6.1)
