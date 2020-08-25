@@ -4,6 +4,7 @@
 #### Table of Contents
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Usage](#usage)
 * [Contact](#contact)
 * [License](#license)
 
@@ -17,13 +18,23 @@ Courses docs and labs
 
 2019 Version
 
-Copyright: LIU_FACULTY OF ARTS AND SCIENCES
+Copyright: LIU_FACULTY OF ARTS AND SCIENCES & Zhixuan_Duan
 
 Link: https://liu.se/en/education/program/f7msl
 
 ### Built With
 * R (version 3.6.1)
 * Python3
+
+<!-- USAGE -->
+## Usage
+As you can see in the catalog, each file includes course handouts, labs and lab_nightmare. And they have been compressed for download.
+
+I added .DS_Store to the .gitignore file, the purpose is to delete the desktop settings file that comes with the mac, you can just ignore it.
+
+I also shared the Rmarkdown Template file and Texrefcard file to write automated documents.
+
+***All documents are for learning only and strictly prohibited for commercial use. Please check the License part.***
 
 <!-- CONTACT -->
 ## Contact
